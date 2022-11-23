@@ -1,13 +1,11 @@
 package com.example.project.DTOs;
 
-import com.example.project.Entities.Project;
-
 import java.io.Serializable;
 import java.sql.Blob;
 import java.util.Objects;
 
 /**
- * A DTO for the {@link Project} entity
+ * A DTO for the {@link com.example.project.Entities.Project} entity
  */
 public class ProjectDto implements Serializable {
     private final Integer id;

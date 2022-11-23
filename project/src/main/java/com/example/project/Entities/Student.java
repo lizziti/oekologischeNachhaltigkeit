@@ -32,4 +32,16 @@ public class Student {
     public void setProjects(List<Project> projects) {
         this.projects = projects;
     }
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

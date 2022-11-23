@@ -10,6 +10,12 @@ public class User {
     @Column(name = "id", nullable = false)
     private Integer id;
 
+    @Column(name = "username", nullable = false, unique = true)
+    private String username;
+
+    @Column(name = "password", nullable = false)
+    private String password;
+
     @Column(name = "first_name", nullable = false)
     private String firstName;
 
@@ -21,6 +27,34 @@ public class User {
 
     @Column(name = "email", nullable = false)
     private String email;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "role_id", nullable = false)
+    private RoleEnum role;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public RoleEnum getRole() {
+        return role;
+    }
+
+    public void setRole(RoleEnum role) {
+        this.role = role;
+    }
 
     public String getEmail() {
         return email;
