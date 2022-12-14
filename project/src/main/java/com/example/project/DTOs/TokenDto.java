@@ -7,13 +7,19 @@ import java.util.Objects;
  * A DTO for the {@link com.example.project.Entities.Token} entity
  */
 public class TokenDto implements Serializable {
-    private final String token;
-    private final UserDto user;
+    private String token;
+    private UserDto user;
 
     public TokenDto(String token, UserDto user) {
         this.token = token;
         this.user = user;
     }
+
+    public TokenDto(){}
+
+    public void setToken(String token){this.token = token;}
+
+    public void setUser(UserDto user){this.user = user;}
 
     public String getToken() {
         return token;

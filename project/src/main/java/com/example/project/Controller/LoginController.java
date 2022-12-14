@@ -6,12 +6,7 @@ import com.example.project.Entities.Token;
 import com.example.project.Entities.User;
 import com.example.project.Repositories.TokenRepository;
 import com.example.project.Repositories.UserRepository;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Optional;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class LoginController {
@@ -24,15 +19,22 @@ public class LoginController {
         this.userRepository = userRepository;
         this.tokenRepository = tokenRepository;
     }
-/*
-    @PostMapping("/login")
-    TokenDto login(@RequestBody LoginDto loginData){
 
+    @PostMapping("/login")
+    String login(@RequestBody LoginDto loginData){
+        User user = userRepository.findUserByUsername(loginData.getUsername()).orElseThrow();
+        if(user.getPassword().equals(loginData.getPassword())) {
+            tokenRepository.deleteAllByUser(user);
+            tokenRepository.save(new Token(user));
+            return tokenRepository.findTokenByUser(user).getToken();
+        }
+        return "";
     }
 
     @DeleteMapping("/logout")
     String login(@RequestBody TokenDto token){
-
+        tokenRepository.deleteAllByToken(token.getToken());
+        return "";
     }
- */g
+
 }

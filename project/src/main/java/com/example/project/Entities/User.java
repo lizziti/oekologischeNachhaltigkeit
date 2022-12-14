@@ -28,9 +28,21 @@ public class User {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "role_id", nullable = false)
-    private RoleEnum role;
+    @Column(name = "role", nullable = false)
+    private String role;
+
+    public User(){}
+
+    public User(String username, String password, String firstName, String lastName,
+         Integer faculty, String email, String role){
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.faculty = faculty;
+        this.email = email;
+        this.role = role;
+    }
 
     public String getPassword() {
         return password;
@@ -48,11 +60,11 @@ public class User {
         this.username = username;
     }
 
-    public RoleEnum getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(RoleEnum role) {
+    public void setRole(String role) {
         this.role = role;
     }
 

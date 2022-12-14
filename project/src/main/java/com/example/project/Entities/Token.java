@@ -1,5 +1,5 @@
 package com.example.project.Entities;
-
+import java.util.UUID;
 import javax.persistence.*;
 
 @Entity
@@ -11,6 +11,15 @@ public class Token {
 
     public String getToken() {
         return token;
+    }
+
+    public Token(){
+
+    }
+
+    public Token(User user){
+        this.user = user;
+        token = UUID.randomUUID().toString();
     }
 
     @OneToOne(orphanRemoval = true)

@@ -14,9 +14,10 @@ public class UserDto implements Serializable {
     private final String lastName;
     private final Integer faculty;
     private final String email;
-    private final RoleEnumDto role;
+    private final String role;
 
-    public UserDto(Integer id, String username, String password, String firstName, String lastName, Integer faculty, String email, RoleEnumDto role) {
+    public UserDto(Integer id, String username, String password, String firstName, String lastName,
+                   Integer faculty, String email, String role) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -55,7 +56,7 @@ public class UserDto implements Serializable {
         return email;
     }
 
-    public RoleEnumDto getRole() {
+    public String getRole() {
         return role;
     }
 
