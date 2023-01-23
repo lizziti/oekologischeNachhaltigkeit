@@ -1,0 +1,42 @@
+div{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+input{
+  width: 300px;
+  height: 20px;
+  background: #ffe6c0;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 5px;
+}
+input:focus{
+  border: 2px solid #13734C;
+}
+button{
+  width: 20%;
+  height: 40px;
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: #13734C;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: .2s ease-in;
+  cursor: pointer;
+}
+button:hover{
+  background: #fbb63f;
+}
+button:disabled{
+  background: #cccccc;
+}

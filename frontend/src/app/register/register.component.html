@@ -1,0 +1,23 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" xmlns="http://www.w3.org/1999/html">
+  <input type="text" formControlName="firstname" required placeholder="Vorname"/>
+  <input type="text" formControlName="lastname" required placeholder="Nachname"/>
+  <select formControlName="faculty">
+    <option selected>Fachbereich 1</option>
+    <option>Fachbereich 2</option>
+    <option>Fachbereich 3</option>
+    <option>Fachbereich 4</option>
+  </select>
+  <select formControlName="role">
+    <option selected>Student</option>
+    <option>Dozent</option>
+  </select>
+  <input type="email" formControlName="email" required placeholder="Email"/>
+  <input class="passwordTip" type="password" formControlName="password" required placeholder="Passwort"/>
+  <span class="tip">Das Passwort muss mindestens 8 Zeichen lang sein!</span>
+  <input type="password" formControlName="confirmPassword" required placeholder="Passwort bestätigen"/>
+  <div class="checkbox">
+    <input type="checkbox" formControlName="checkbox"/>
+    <span>Ich habe die <a href="datenschutz">Datenschutzerklärung</a> und die Nutzungsbedingungen zur Kenntnis genommen. Ich stimme zu, dass meine Angaben und Daten zur Bearbeitung meiner Anfrage elektronisch erhoben und gespeichert werden.</span>
+  </div>
+  <button type="submit" [disabled]="registerForm.invalid">Anmelden</button>
+</form>

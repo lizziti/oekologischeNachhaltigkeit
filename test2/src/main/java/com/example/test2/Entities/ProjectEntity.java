@@ -13,7 +13,7 @@ public class ProjectEntity {
     private Long id;
 
     @Column(name = "start_date")
-    private LocalDate start_date;
+    private String start_date;
 
     @Column(name = "topic")
     private String topic;
@@ -38,11 +38,11 @@ public class ProjectEntity {
         this.topic = topic;
     }
 
-    public LocalDate getStart_date() {
+    public String getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(LocalDate start_date) {
+    public void setStart_date(String start_date) {
         this.start_date = start_date;
     }
 

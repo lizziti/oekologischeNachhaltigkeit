@@ -1,0 +1,28 @@
+div.footer {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+div.inner-footer{
+  align-self: center;
+  display: inline-flex;
+  gap: 30px;
+}
+img {
+  width: 170px;
+  height: auto;
+}
+p{
+  font-family: 'Manrope', sans-serif !important;
+  font-size: 13px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+h4{
+  font-family: 'Manrope', sans-serif !important;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
